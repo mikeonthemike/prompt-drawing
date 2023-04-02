@@ -1,3 +1,5 @@
+// Function to draw random straight lines
+// takes the canvas id and how many lines to draw
 function drawRandomLines(canvas, numLines) {
   const ctx = canvas.getContext("2d");
 
@@ -13,9 +15,11 @@ function drawRandomLines(canvas, numLines) {
   }
 }
 
-
+// Function to draw random curved lines
+// takes the canvas id and how many lines to draw
 function drawRandomCurves(canvas, numLines) {
   const ctx = canvas.getContext("2d");
+    
 
   for (let i = 0; i < numLines; i++) {
     const x1 = Math.floor(Math.random() * canvas.width);
@@ -31,4 +35,10 @@ function drawRandomCurves(canvas, numLines) {
     ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x2, y2);
     ctx.stroke();
   }
+}
+
+// Function to randomly generate the number of lines to draw
+// 
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

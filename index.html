@@ -9,14 +9,19 @@
 </head>
 
 <body>
-  Hello world
-      <canvas id="myCanvas" width="400" height="400"></canvas>
+ <div id="title">Creativity Prompt</div> 
+  <div id="canvas">
+      <canvas id="myCanvas" width="200" height="200"></canvas>
   <script src="script.js"></script>
   <script>  
       const canvas = document.getElementById("myCanvas");
-      drawRandomLines(canvas, 2); // draws n random lines on the canvas
-    drawRandomCurves(canvas, 2) // draws n random curves on the canvas
+    const numStraightLines = getRandomNumber(1, 2);
+    const numCurvedLines = getRandomNumber(1, 2);
+    
+      drawRandomLines(canvas, numStraightLines); // draws n random lines on the canvas
+    drawRandomCurves(canvas, numCurvedLines) // draws n random curves on the canvas
     </script>
+    </div>
 
   <!--
   This script places a badge on your repl's full-browser view back to your repl's cover
