@@ -42,3 +42,10 @@ function drawRandomCurves(canvas, numLines) {
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function generatePDF(canvas) {
+  const imgData = canvas.toDataURL("image/jpeg", 1.0);
+  const pdf = new jsPDF();
+  pdf.addImage(imgData, "JPEG", 0, 0, canvas.width, canvas.height);
+  pdf.save("my-drawing.pdf");
+}
